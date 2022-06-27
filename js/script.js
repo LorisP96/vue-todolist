@@ -32,11 +32,12 @@ var app = new Vue({
             }
         },
         listItemDone(element) {
-            if (element.done === false) {
-                element.done = true;
-            } else {
-                element.done = false
-            }
+            // if (element.done === false) {
+            //     element.done = true;
+            // } else {
+            //     element.done = false
+            // }
+            element.done = element.done === false ? element.done = true : element.done = false;
         }
     }
 })
