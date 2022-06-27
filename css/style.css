@@ -35,16 +35,30 @@
 
 .todolist > li {
     height: 40px;
-    padding: 5px 30px;
+    padding: 5px 20px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid black;
 }
 
-.todolist > li:last-child {
+.todolist:last-child > li {
     border-bottom: 0;
 }
 
 .check {
     text-decoration: line-through;
+}
+
+.todolist > li > div:first-child {
+    flex-grow: 1;
+}
+
+.todolist > li > div:last-child {
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
 }
