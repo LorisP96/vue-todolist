@@ -19,7 +19,7 @@
             </div>
             <ul class="todolist">
                 <li v-for="item, index in todoList">
-                    <div :class="{ 'check': item.done }">
+                    <div @click="listItemDone(item)" :class="{ 'check': item.done }">
                         {{ index +1 }} : {{ item.text }}
                     </div>
                     <div @click="removeItem(index)"><i class="fa-solid fa-xmark"></i></div>

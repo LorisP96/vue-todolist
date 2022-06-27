@@ -30,6 +30,13 @@ var app = new Vue({
                 });
                 this.newItem = '';
             }
+        },
+        listItemDone(element) {
+            if (element.done === false) {
+                element.done = true;
+            } else {
+                element.done = false
+            }
         }
     }
 })
