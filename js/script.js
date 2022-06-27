@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+        newItem: '',
         todoList : [
             {
                 text: 'Fare i compiti',
@@ -14,24 +15,21 @@ var app = new Vue({
                 text: 'Fare il bucato',
                 done: false
             },
-        ]
+        ],
     },
     methods: {
         removeItem(index) {
             this.todoList.splice(index, 1)
+        },
+        addItem() {
+            if (this.newItem.length > 0) {
+                this.todoList.push(
+                {
+                    text: this.newItem,
+                    done: false
+                });
+                this.newItem = '';
+            }
         }
     }
 })
-
-// MILESTONE 1
-// Stampare all'interno di una lista, un item per ogni todo.
-// Se la proprietà done è uguale a true, 
-// visualizzare il testo del todo sbarrato.
-// MILESTONE 2
-// Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa,
-//  il todo viene rimosso dalla lista.
-// MILESTONE 3
-// Predisporre un campo di input testuale e un pulsante "aggiungi":
-// cliccando sul pulsante, il testo digitato viene letto e utilizzato 
-// per creare un nuovo todo, 
-// che quindi viene aggiunto alla lista dei todo esistenti.
