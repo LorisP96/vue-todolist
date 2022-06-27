@@ -14,12 +14,12 @@
         
         <div class="container">
             <div class="inputs">
-                <input type="text" placeholder="Nuovo Todo" v-model="newItem">
+                <input type="text" placeholder="Nuovo Todo" v-model="newItem" @keyup.enter="addItem()">
                 <button @click="addItem()">Aggiungi</button>
             </div>
             <ul class="todolist">
                 <li v-for="item, index in todoList">
-                    <div :class="{ 'check': item.done }">
+                    <div @click="listItemDone(item)" :class="{ 'check': item.done }">
                         {{ index +1 }} : {{ item.text }}
                     </div>
                     <div @click="removeItem(index)"><i class="fa-solid fa-xmark"></i></div>
