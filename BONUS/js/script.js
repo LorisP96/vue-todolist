@@ -37,7 +37,10 @@ var app = new Vue({
             // } else {
             //     element.done = false
             // }
-            element.done = element.done === false ? element.done = true : element.done = false;
+            
+            // element.done = element.done === false ? element.done = true : element.done = false;
+
+            element.done = !element.done
         }
     }
 })
